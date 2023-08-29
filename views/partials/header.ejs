@@ -9,9 +9,16 @@
 </head>
 <body>
   <nav>
-    <!-- <% if(user) { %>
-    <% } %> -->
-    <a href="/">Home</a>
-    &nbsp;|&nbsp;
-    <a href="/auth/google" class="login">LOG IN&nbsp;</a>
+    <% if(user) { %>
+      <a href="/">Home</a>
+      &nbsp;|&nbsp;
+      <a href="/posts/profile">PROFILE</a>
+      &nbsp;|&nbsp;
+      <a href="/logout">LOG OUT</a>
+    <% }  else { %>
+      <p>Home</p>
+      <p>Liked posts</p>
+      <p>Profile</p>
+      <a href="/auth/google" class="login">LOG IN&nbsp;</a>
+    <% } %>
   </nav>

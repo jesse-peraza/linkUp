@@ -11,8 +11,10 @@
         </section>
     <% }) %>
 </main>
+<% if(user) { %>
 <div>
     <a href="/posts/new">Create a new post</a>
 </div>
+<% } %>
 
 <%- include('../partials/footer') %>

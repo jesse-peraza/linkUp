@@ -4,7 +4,8 @@ module.exports = {
     index,
     new: newPost,
     create,
-    show
+    show,
+    profile
 }
 
 async function index(req, res) {
@@ -19,13 +20,15 @@ async function newPost(req, res) {
 async function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
-    }
+    } 
+    console.log(req.body)
+    req.body.user = req.user.id
     try {
         const post = await Post.create(req.body);
         res.redirect('/posts');
     } catch (err) {
         console.log(err);
-        res.render('posts/new', { errorMsg: err.message });
+        res.redirect('posts/new');
     }
 }
 
@@ -35,6 +38,18 @@ async function show(req, res) {
         res.render('posts/show', { title: 'Post Details', post });
     } catch (err) {
         console.log(err)
-        res.render('/posts', { errorMsg: err.message })
+        res.redirect('/posts')
+    }
+}
+
+async function profile(req, res) {
+    console.log('profile')
+    try {
+        const posts = await Post.find({'user':req.user.id});
+        console.log(posts)
+        res.render('profile/profile', {posts})
+    } catch (err) {
+        console.log(err)
+        res.redirect('/posts')
     }
 }
