@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<h2>Profile Page</h2>
+<main>
+    <% posts.forEach(function(post) { %>
+        <section>
+            <div><%= post.text %></div>
+            <div><%= post.likes %></div>
+            <div><%= post.dislikes %></div>
+            <div><a href="/posts/<%= post._id %>">DETAILS</a></div>
+        </section>
+    <% }) %>
+</main>
+
+
+
+<%- include('../partials/footer') %>
