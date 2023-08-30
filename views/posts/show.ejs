@@ -7,4 +7,30 @@
     <div><%= post.dislikes %></div>
 </section>
 
+<section class="comments">
+    <form action="/posts/<%= post._id %>/comments" method="POST">
+        <textarea name="text"></textarea>
+        <input type="submit">
+    </form>
+</section>
+
+<% if (post.comments.length) { %>
+<% post.comments.forEach(function(comment) { %>
+<section>
+    <div><%= comment.createdAt.toLocaleString() %></div>
+    <div><%= comment.text %></div>
+    <div><%= comment.likes %></div>
+    <div><%= comment.dislikes %></div>
+    <!-- <div>
+        <% if (user?._id.equals(comment.user)) { %>
+            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+        <% } %>
+    </div> -->
+</section>
+<% }) %>
+<% } %>
+
+
 <%- include('../partials/footer') %>

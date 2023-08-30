@@ -3,7 +3,7 @@
 <h2>Edit Page</h2>
 <form action="/posts/<%= post.id %>?_method=PUT" method="POST">
     <label>Speak Your Mind:
-        <input type="text" name="text">
+        <input type="text" name="text" value="<%= post.title %>">
     </label>
     <button type="submit">UPDATE</button>
 </form>
