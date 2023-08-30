@@ -10,5 +10,7 @@ router.get('/new', ensureLoggedIn, postsCtrl.new);
 router.get('/:id', postsCtrl.show);
 router.delete('/:id', ensureLoggedIn, profileCtrl.delete)
 router.post('/', ensureLoggedIn, postsCtrl.create);
+router.get('/:id/edit', ensureLoggedIn, profileCtrl.edit)
+router.put('/:id', ensureLoggedIn, profileCtrl.update)
 
 module.exports = router;

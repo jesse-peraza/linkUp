@@ -4,6 +4,7 @@
 <main>
     <% posts.forEach(function(post) { %>
         <section>
+            <div><%= post.createdAt.toLocaleString() %></div>
             <div><%= post.text %></div>
             <div><%= post.likes %></div>
             <div><%= post.dislikes %></div>

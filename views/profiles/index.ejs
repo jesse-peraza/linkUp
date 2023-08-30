@@ -4,6 +4,7 @@
 <main>
     <% posts.forEach(function(post) { %>
         <section>
+            <!-- <div><%= post.createdAt %></div> -->
             <div><%= post.text %></div>
             <div><%= post.likes %></div>
             <div><%= post.dislikes %></div>
@@ -12,6 +13,9 @@
                 <% if (user?._id.equals(post.user)) { %>
                     <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
                       <button type="submit">X</button>
+                    </form>
+                    <form action="/posts/<%= post.id %>/edit" method="PUT">
+                        <button type="submit">Update Post</button>
                     </form>
                 <% } %>  
             </div>

@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<h2>Edit Page</h2>
+<form action="/posts/<%= post.id %>?_method=PUT" method="POST">
+    <label>Speak Your Mind:
+        <input type="text" name="text">
+    </label>
+    <button type="submit">UPDATE</button>
+</form>
+
+
+<%- include('../partials/footer') %>
+

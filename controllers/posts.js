@@ -5,7 +5,6 @@ module.exports = {
     new: newPost,
     create,
     show,
-    // profile
 }
 
 async function index(req, res) {
@@ -42,15 +41,4 @@ async function show(req, res) {
     }
 }
 
-// async function profile(req, res) {
-//     console.log('profile')
-//     try {
-//         const posts = await Post.find({'user':req.user.id});
-//         console.log(posts)
-//         res.render('profile/profile', {posts})
-//     } catch (err) {
-//         console.log(err)
-//         res.redirect('/posts')
-//     }
-// }
 
