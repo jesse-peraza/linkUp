@@ -1,36 +1,63 @@
 <%- include('../partials/show-header') %>
 
-<h2>Show Page</h2>
-<section>
-    <div><%= post.text %></div>
-    <div><%= post.likes %></div>
-    <div><%= post.dislikes %></div>
+<section class="post">
+    <div class="icons">
+        <button><i class="fa-solid fa-circle-up fa-2x" style="color: #38b6ff;"></i></button>
+        <div><%= post.likes %></div>
+        <button><i class="fa-solid fa-circle-arrow-down fa-2x" style="color: #38b6ff;"></i></button>
+        <div><%= post.dislikes %></div>
+        <div>
+            <i class="fa-regular fa-comment-dots fa-2x" style="color: #38b6ff;"></i>
+        </div>
+    </div>
+    <div class="post-div">
+        <div class="date"><%= post.createdAt.toLocaleDateString() %></div>
+        <div class="text"><%= post.text %></div>
+        <div>
+            <i class="fa-solid fa-quote-right fa-xl" style="color: #000000;"></i>
+        </div>
+    </div>
 </section>
 
-<section class="comments">
-    <form action="/posts/<%= post._id %>/comments" method="POST">
-        <textarea name="text" placeholder="Post your comment!"></textarea>
-        <input type="submit">
-    </form>
-</section>
+<br><br>
+
 
 <% if (post.comments.length) { %>
 <% post.comments.forEach(function(comment) { %>
-<section>
-    <div><%= comment.createdAt.toLocaleString() %></div>
-    <div><%= comment.text %></div>
-    <div><%= comment.likes %></div>
-    <div><%= comment.dislikes %></div>
+    <section class="comment">
+        <div class="c-icons">
+            <button><i class="fa-solid fa-circle-up fa-2x" style="color: #38b6ff;"></i></button>
+            <div><%= comment.likes %></div>
+            <button><i class="fa-solid fa-circle-arrow-down fa-2x" style="color: #38b6ff;"></i></button>
+            <div><%= comment.dislikes %></div>
+        </div>
+        <div class="comment-div">
+            <div>
+                <i class="fa-solid fa-quote-left fa-xl" style="color: #000000;"></i>
+            </div>
+            <div><%= comment.createdAt.toLocaleDateString() %></div>
+            <div><%= comment.text %></div>
+        </div>
     <!-- <div>
-        <% if (user?._id.equals(comment.user)) { %>
+            <% if (user?._id.equals(comment.user)) { %>
             <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
+            <button type="submit">X</button>
             </form>
-        <% } %>
-    </div> -->
-</section>
+            <% } %>
+        </div> -->
+    </section>
+    <br>
 <% }) %>
 <% } %>
+    
+<br><br>
 
-
+<section class="comments">
+    <form action="/posts/<%= post._id %>/comments" method="POST">
+        <textarea name="text" placeholder="Post your comment!" maxlength="160" rows="3" cols="35"></textarea>
+        <br>
+        <button class="post-btn" type="submit">POST</button>
+    </form>
+</section>
+    
 <%- include('../partials/footer') %>
