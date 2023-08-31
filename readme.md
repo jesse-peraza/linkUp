@@ -12,7 +12,7 @@
 
 ## Getting Started
 
-Click [here]() to explore the application. You will need to sign in using OAuthTo in order to create posts, comments, and interact with other users. But you're still free to spectate!
+Click [here](https://link-1-up-71a2d05f7afb.herokuapp.com/) to explore the application. You will need to sign in using OAuthTo in order to create posts, comments, and interact with other users. But you're still free to spectate!
 
 ## Technologies Used
 **Languages:** JavaScript, HTML, CSS, Node.js, Express.js, Mongoose, MongoDB
