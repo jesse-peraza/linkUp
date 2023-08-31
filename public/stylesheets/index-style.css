@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
-}
-
 img {
   width: 13vw;
   margin-right: auto;
@@ -58,8 +54,54 @@ li a, li p {
 
 main {
   position: relative;
-  left: 50vw;
+  left: 45vw;
   padding-top: 29vh;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  position: fixed;
+  left: 22vw;
+  top: 1vh;
+}
+
+section {
+  border: 2px solid black;
+  border-radius: 7px;
+  width: 30vw;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.icons {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.icons button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.post-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 27vw;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.text {
+  text-align: center;
+  font-size: 1.2vw;
 }
 
 .create-post {
@@ -68,5 +110,41 @@ main {
   right: 0;
   margin-bottom: 1vh;
   margin-right: 1vh;
+}
+
+.dropbtn {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 5px;
+  z-index: 1;
+}
+
+.deleteBtn, .updateBtn {
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  padding: 6px 8px;
+  background-color: lightgray;
+  border: none;
+}
+
+.deleteBtn:hover, .updateBtn:hover {
+  background-color: #38b6ff;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 

@@ -1,24 +1,43 @@
 <%- include('../partials/index-header') %>
 
-<h2>Profile Page</h2>
+<h1>Profile</h1>
     <% posts.forEach(function(post) { %>
         <section>
-            <div><%= post.createdAt.toLocaleString() %></div>
-            <div><%= post.text %></div>
-            <div><%= post.likes %></div>
-            <div><%= post.dislikes %></div>
-            <div><a href="/posts/<%= post._id %>">DETAILS</a></div>
-            <div>
-                <% if (user?._id.equals(post.user)) { %>
+            <div class="icons">
+                <button><i class="fa-solid fa-circle-up fa-2x" style="color: #38b6ff;"></i></button>
+                <div><%= post.likes %></div>
+                <button><i class="fa-solid fa-circle-arrow-down fa-2x" style="color: #38b6ff;"></i></button>
+                <div><%= post.dislikes %></div>
+                <div>
+                    <a href="/posts/<%= post._id %>">
+                        <i class="fa-regular fa-comment-dots fa-2x" style="color: #38b6ff;"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="post-div">
+                <div class="date"><%= post.createdAt.toLocaleDateString() %></div>
+                <div class="text"><%= post.text %></div>
+                <div>
+                    <i class="fa-solid fa-quote-right fa-xl" style="color: #000000;"></i>
+                </div>
+            </div>
+            <% if (user?._id.equals(post.user)) { %>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #000000;"></i>
+                </button>
+                <div class="dropdown-content">
                     <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-                      <button type="submit">X</button>
+                        <button type="submit" class="deleteBtn">DELETE</button>
                     </form>
                     <form action="/posts/<%= post.id %>/edit" method="PUT">
-                        <button type="submit">Update Post</button>
+                        <button type="submit" class="updateBtn">UPDATE</button>
                     </form>
-                <% } %>  
+                </div>
             </div>
+            <% } %>  
         </section>
+        <br><br>
     <% }) %>
 
 
