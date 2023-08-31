@@ -1,10 +1,9 @@
-<%- include('../partials/header') %>
+<%- include('../partials/index-header') %>
 
 <h2>Profile Page</h2>
-<main>
     <% posts.forEach(function(post) { %>
         <section>
-            <!-- <div><%= post.createdAt %></div> -->
+            <div><%= post.createdAt.toLocaleString() %></div>
             <div><%= post.text %></div>
             <div><%= post.likes %></div>
             <div><%= post.dislikes %></div>
@@ -21,7 +20,6 @@
             </div>
         </section>
     <% }) %>
-</main>
 
 
 

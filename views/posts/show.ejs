@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../partials/show-header') %>
 
 <h2>Show Page</h2>
 <section class="show-post">
@@ -9,7 +9,7 @@
 
 <section class="comments">
     <form action="/posts/<%= post._id %>/comments" method="POST">
-        <textarea name="text"></textarea>
+        <textarea name="text" placeholder="Post your comment!"></textarea>
         <input type="submit">
     </form>
 </section>

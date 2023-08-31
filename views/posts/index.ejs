@@ -1,20 +1,22 @@
-<%- include('../partials/header') %>
+<%- include('../partials/index-header') %>
 
 <h2>Home Page</h2>
-<main>
-    <% posts.forEach(function(post) { %>
-        <section>
-            <div><%= post.createdAt.toLocaleString() %></div>
-            <div><%= post.text %></div>
-            <div><%= post.likes %></div>
-            <div><%= post.dislikes %></div>
-            <div><a href="/posts/<%= post._id %>">DETAILS</a></div>
-        </section>
-    <% }) %>
-</main>
+<% posts.forEach(function(post) { %>
+    <section>
+        <div><%= post.createdAt.toLocaleString() %></div>
+        <div><%= post.text %></div>
+        <div><%= post.likes %></div>
+        <div><%= post.dislikes %></div>
+        <div><a href="/posts/<%= post._id %>">DETAILS</a></div>
+        <button><i class="fa-solid fa-circle-up fa-xl" style="color: #38b6ff;"></i></button>
+        <button><i class="fa-solid fa-circle-arrow-down fa-xl" style="color: #38b6ff;"></i></button>
+    </section>
+<% }) %>
 <% if(user) { %>
 <div>
-    <a href="/posts/new">Create a new post</a>
+    <a href="/posts/new" class="create-post">
+        <i class="fa-regular fa-square-plus fa-3x" style="color: #38b6ff;"></i>
+    </a>
 </div>
 <% } %>
 

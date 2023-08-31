@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkUp</title>
+  <link rel='stylesheet' href='/stylesheets/show-style.css' />
+  <script src="https://kit.fontawesome.com/83d3119e6c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <img src="/images/logo.svg" class="logo">
+  <nav>
+    <% if(user) { %>
+      <ul>
+        <li>
+          <i class="fa-solid fa-house-user fa-2x" style="color: #38b6ff;"></i>
+          <a href="/">HOME</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-user fa-2x" style="color: #38b6ff;"></i>
+          <a href="/profiles">PROFILE</a>
+        </li>
+        <li id="login"><a href="/logout">LOG OUT</a></li>
+      </ul>
+      <div class="vl"></div>
+      <% }  else { %>
+      <ul>
+        <li>
+          <i class="fa-solid fa-house-user fa-2x" style="color: #38b6ff;"></i>
+          <p>HOME</p>
+        </li>
+        <!-- <li><p>Liked posts</p></li> -->
+        <li>
+          <i class="fa-solid fa-user fa-2x" style="color: #38b6ff;"></i>
+          <p>PROFILE</p>
+        </li>
+        <li id="login"><a href="/auth/google" class="login">LOG IN</a></li>
+      </ul>
+      <% } %>
+      <div class="vl"></div>
+    </nav>
+  <main>

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #00B7FF;
+}
+
+img {
+  width: 13vw;
+  margin-right: auto;
+  margin-top: -5vh;
+  position: fixed;
+}
+
+
+ul {
+  list-style-type: none;
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  margin-top: 30vh;
+}
+
+li i {
+  padding-left: 3vw;
+}
+
+li a, li p {
+  display: block;
+  width: 13vw;
+  padding-bottom: 1.5vh;
+  margin-top: -2.5vh;
+  text-align: right;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25vw;
+  color: black;
+}
+
+#login {
+  padding-top: 55vmin;
+  text-align: center;
+}
+
+.vl {
+  border-left: 0.25vw solid black;
+  margin-top: 2vh;
+  height: 95vh;
+  width: 5px;
+  left: 20vw;
+  position: fixed;
+}
+
+main {
+  position: relative;
+  left: 50vw;
+  padding-top: 29vh;
+}
+
+/* Above is styling for NAV */
